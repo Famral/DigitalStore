@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Product Marketplace</title>
+    <title>Famral - Digital Product Marketplace</title>
     <!-- SEO Meta Descriptions -->
     <meta name="description"
         content="A simple online marketplace to browse and buy digital products like UI kits, development templates, and icon packs.">
@@ -51,7 +51,7 @@
         <h2 class="text-5xl font-extrabold text-gray-900 text-center mb-12 leading-tight">
             Discover Premium Digital Products
         </h2>
-        <div id="products-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
+        <div id="products-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             <!-- Product cards will be inserted here by JavaScript -->
         </div>
     </main>
@@ -77,45 +77,41 @@
         const dummyProducts = [
             {
                 id: 'prod1',
-                name: 'Ultimate UI Kit',
-                description: 'A comprehensive collection of UI components for web and mobile applications. Includes Figma files, Sketch files, and more.',
-                price: 199,
-                category: 'Design Resources',
-                imageUrl: 'https://placehold.co/400x300/F0F4F8/3B82F6?text=UI+Kit',
+                name: 'phpShort (URL Shortener Platform)',
+                description: 'phpShort is an advanced URL Shortener Platform, that allows you to easily shorten links, target your audience based on their location or platform, and provide analytics insights for the shortened links.',
+                price: 7999,
+                category: 'Original License (Extended)',
+                imageUrl: 'https://placehold.co/400x300/F0F4F8/3B82F6?text=URL+Shortener',
             },
             {
                 id: 'prod2',
-                name: 'React Starter Template',
-                description: 'Jumpstart your React projects with this pre-configured template. Includes Tailwind CSS, routing, and state management.',
-                price: 12999,
-                category: 'Development Tools',
-                imageUrl: 'https://placehold.co/400x300/F0F4F8/10B981?text=React+Template',
+                name: 'SumoWebTools (Online Web Tools Script)',
+                description: 'SumoWebTools is a web tools script that provides free internet tools useful in daily online activities.',
+                price: 1299,
+                category: 'Original License (Regular)',
+                imageUrl: 'https://placehold.co/400x300/F0F4F8/10B981?text=SumoWebTools',
             },
             {
                 id: 'prod3',
-                name: 'Modern Icon Pack',
-                description: 'A set of 500+ vector icons for various design needs. SVG, PNG, and Webfont formats included.',
-                price: 19.99,
-                category: 'Design Resources',
-                imageUrl: 'https://placehold.co/400x300/F0F4F8/EF4444?text=Icon+Pack',
-            },
-            {
-                id: 'prod4',
-                name: 'E-commerce UI Elements',
-                description: 'Specialized UI components for e-commerce websites. Product cards, shopping carts, checkout forms.',
-                price: 39.99,
-                category: 'Design Resources',
-                imageUrl: 'https://placehold.co/400x300/F0F4F8/6366F1?text=E-commerce+UI',
+                name: 'Image Website (Stock Photo Platform)',
+                description: 'Free stock photos website. Browse millions of high-quality royalty free stock images & copyright free pictures.',
+                price: 299,
+                category: 'Custom License',
+                imageUrl: 'https://placehold.co/400x300/F0F4F8/EF4444?text=Image+Website',
             },
         ];
 
         // Function to handle "Buy Now" action
         function handleBuyNow(product) {
-            // In a real application, this would integrate with a payment gateway.
-            // For this example, redirect to a dummy checkout URL.
             const checkoutUrl = `https://example.com/checkout?product_id=${product.id}&product_name=${encodeURIComponent(product.name)}&price_inr=${product.price.toFixed(0)}`;
             console.log(`Redirecting to checkout for ${product.name}: ${checkoutUrl}`); // For testing/logging
             window.location.href = checkoutUrl;
+        }
+        // Function to handle "Demo" action
+        function handleDemo(product) {
+            alert(`Showing demo for "${product.name}"! (Simulation)`);
+            // In a real scenario, this might open a modal, redirect to a demo page, etc.
+            console.log(`Demo requested for ${product.name}`);
         }
 
         // Function to create and append product cards
@@ -132,17 +128,24 @@
             <h3 class="text-2xl font-bold text-gray-800 mb-2">${product.name}</h3>
             <p class="text-sm text-indigo-600 font-medium mb-3">${product.category}</p>
             <p class="text-gray-700 flex-grow leading-relaxed mb-4">${product.description.substring(0, 100)}...</p>
-            <div class="flex justify-between items-center mt-auto pt-4 border-t border-gray-100">
+            <div class="mt-auto pt-4 border-t border-gray-100">
               <span class="text-blue-700 font-extrabold text-2xl">₹${product.price.toFixed(0)}</span>
-              <button class="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-full text-base font-bold shadow-md transform hover:scale-105 transition duration-300 ease-in-out flex items-center justify-center buy-now-btn">
-                 Buy Now
-              </button>
+              <div class="flex space-x-3 mt-3">
+                <button class="flex-1 bg-green-600 hover:bg-green-700 text-white py-2.5 px-4 rounded-lg text-sm font-semibold shadow-md transform hover:scale-105 transition duration-300 ease-in-out buy-now-btn">
+                   Buy Now
+                </button>
+                <button class="flex-1 bg-white hover:bg-gray-100 text-blue-600 border border-blue-500 py-2.5 px-4 rounded-lg text-sm font-semibold shadow-sm transform hover:scale-105 transition duration-300 ease-in-out demo-btn">
+                   Demo
+                </button>
+              </div>
             </div>
           </div>
         `;
-                // Attach event listener to the button after it's created
+                // Attach event listeners to the buttons after they are created
                 const buyNowBtn = productCard.querySelector('.buy-now-btn');
                 buyNowBtn.addEventListener('click', () => handleBuyNow(product));
+                const demoBtn = productCard.querySelector('.demo-btn');
+                demoBtn.addEventListener('click', () => handleDemo(product));
 
                 productsContainer.appendChild(productCard);
             });
