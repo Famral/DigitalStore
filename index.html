@@ -1,150 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Digital Product Marketplace</title>
-  <!-- SEO Meta Descriptions -->
-  <meta name="description" content="A simple online marketplace to browse and buy digital products like UI kits, development templates, and icon packs.">
-  <meta name="keywords" content="digital products, marketplace, UI kit, template, icon pack, e-commerce, online store, buy digital products">
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts - Inter -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Product Marketplace</title>
+    <!-- SEO Meta Descriptions -->
+    <meta name="description"
+        content="A simple online marketplace to browse and buy digital products like UI kits, development templates, and icon packs.">
+    <meta name="keywords"
+        content="digital products, marketplace, UI kit, template, icon pack, e-commerce, online store, buy digital products">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
 
-  <style>
-    /* Custom styles for the body to ensure Inter font is applied */
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-  </style>
+    <style>
+        /* Custom styles for the body to ensure Inter font is applied */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
+
 <body class="min-h-screen bg-gray-100 flex flex-col">
-  <!-- Navbar -->
-  <nav class="bg-white-800 p-4 shadow-lg">
-    <div class="container mx-auto flex justify-between items-center flex-wrap">
-      <!-- Simple href for the brand name -->
-      <a href="index.html" class="text-black text-2xl font-bold rounded-md px-3 py-1 hover:bg-gray-200 transition duration-200">
-        Digital Market
-      </a>
-      <div class="flex items-center space-x-4 mt-2 sm:mt-0">
-        <!-- Simple href for products link -->
-        <a href="products.html" class="text-black-300 hover:bg-gray-200 px-3 py-2 rounded-md transition duration-200">
-          Products
-        </a>
-        <!-- You can add more simple href links here, e.g., <a href="about.html">About Us</a> -->
-      </div>
-    </div>
-  </nav>
+    <!-- Navbar -->
+    <nav class="bg-white-800 p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center flex-wrap">
+            <!-- Simple href for the brand name -->
+            <a href="index.html"
+                class="text-black text-2xl font-bold rounded-md px-3 py-1 hover:bg-gray-200 transition duration-200">
+                Famral Store
+            </a>
+            <div class="flex items-center space-x-4 mt-2 sm:mt-0">
+                <!-- Simple href for products link -->
+                <a href="https://api.whatsapp.com/send?phone=7878358707&text=Hello"
+                    class="text-black-300 hover:bg-gray-200 px-3 py-2 rounded-md transition duration-200">
+                    Contact Us
+                </a>
+                <!-- You can add more simple href links here, e.g., <a href="about.html">About Us</a> -->
+            </div>
+        </div>
+    </nav>
 
-  <!-- Main Content Area -->
-  <main class="flex-grow container mx-auto py-16 px-4">
-    <h2 class="text-5xl font-extrabold text-gray-900 text-center mb-12 leading-tight">
-      Discover Premium Digital Products
-    </h2>
-    <p class="text-xl text-gray-700 text-center max-w-3xl mx-auto mb-16">
-      Explore our hand-picked collection of high-quality digital assets designed to accelerate your projects and spark creativity.
-    </p>
-    <div id="products-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
-      <!-- Product cards will be inserted here by JavaScript -->
-    </div>
-  </main>
+    <!-- Main Content Area -->
+    <main class="flex-grow container mx-auto py-16 px-4">
+        <h2 class="text-5xl font-extrabold text-gray-900 text-center mb-12 leading-tight">
+            Discover Premium Digital Products
+        </h2>
+        <div id="products-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
+            <!-- Product cards will be inserted here by JavaScript -->
+        </div>
+    </main>
 
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-gray-400 py-6 mt-12 shadow-inner">
-    <div class="container mx-auto text-center text-sm">
-      <p>&copy; <span id="current-year"></span> Digital Market. All rights reserved.</p>
-      <div class="flex justify-center space-x-4 mt-2">
-        <!-- Simple href for policy links -->
-        <a href="privacy.html" class="hover:text-white transition duration-200">Privacy Policy</a>
-        <a href="terms.html" class="hover:text-white transition duration-200">Terms of Service</a>
-      </div>
-    </div>
-  </footer>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-400 py-6 mt-12 shadow-inner">
+        <div class="container mx-auto text-center text-sm">
+            <p>&copy; <span id="current-year"></span> Famral Digital Store. All rights reserved.</p>
+            <div class="flex justify-center space-x-4 mt-2">
+                <!-- Simple href for policy links -->
+                <a href="https://www.famral.com/privacy" class="hover:text-white transition duration-200">Privacy
+                    Policy</a>
+                <a href="https://www.famral.com/terms" class="hover:text-white transition duration-200">Terms of
+                    Service</a>
+                <a href="https://www.famral.com/contact" class="hover:text-white transition duration-200">Contact Us</a>
 
-  <script>
-    // Dummy Data for Products
-    const dummyProducts = [
-      {
-        id: 'prod1',
-        name: 'Ultimate UI Kit',
-        description: 'A comprehensive collection of UI components for web and mobile applications. Includes Figma files, Sketch files, and more.',
-        price: 49.99,
-        category: 'Design Resources',
-        imageUrl: 'https://placehold.co/400x300/F0F4F8/3B82F6?text=UI+Kit',
-      },
-      {
-        id: 'prod2',
-        name: 'React Starter Template',
-        description: 'Jumpstart your React projects with this pre-configured template. Includes Tailwind CSS, routing, and state management.',
-        price: 29.99,
-        category: 'Development Tools',
-        imageUrl: 'https://placehold.co/400x300/F0F4F8/10B981?text=React+Template',
-      },
-      {
-        id: 'prod3',
-        name: 'Modern Icon Pack',
-        description: 'A set of 500+ vector icons for various design needs. SVG, PNG, and Webfont formats included.',
-        price: 19.99,
-        category: 'Design Resources',
-        imageUrl: 'https://placehold.co/400x300/F0F4F8/EF4444?text=Icon+Pack',
-      },
-      {
-        id: 'prod4',
-        name: 'E-commerce UI Elements',
-        description: 'Specialized UI components for e-commerce websites. Product cards, shopping carts, checkout forms.',
-        price: 39.99,
-        category: 'Design Resources',
-        imageUrl: 'https://placehold.co/400x300/F0F4F8/6366F1?text=E-commerce+UI',
-      },
-    ];
+            </div>
+        </div>
+    </footer>
 
-    // Function to handle "Buy Now" action
-    function handleBuyNow(product) {
-      // In a real application, this would integrate with a payment gateway.
-      // For this example, redirect to a dummy checkout URL.
-      const checkoutUrl = `https://example.com/checkout?product_id=${product.id}&product_name=${encodeURIComponent(product.name)}&price_inr=${product.price.toFixed(2)}`;
-      console.log(`Redirecting to checkout for ${product.name}: ${checkoutUrl}`); // For testing/logging
-      window.location.href = checkoutUrl;
-    }
+    <script>
+        // Dummy Data for Products
+        const dummyProducts = [
+            {
+                id: 'prod1',
+                name: 'Ultimate UI Kit',
+                description: 'A comprehensive collection of UI components for web and mobile applications. Includes Figma files, Sketch files, and more.',
+                price: 199,
+                category: 'Design Resources',
+                imageUrl: 'https://placehold.co/400x300/F0F4F8/3B82F6?text=UI+Kit',
+            },
+            {
+                id: 'prod2',
+                name: 'React Starter Template',
+                description: 'Jumpstart your React projects with this pre-configured template. Includes Tailwind CSS, routing, and state management.',
+                price: 12999,
+                category: 'Development Tools',
+                imageUrl: 'https://placehold.co/400x300/F0F4F8/10B981?text=React+Template',
+            },
+            {
+                id: 'prod3',
+                name: 'Modern Icon Pack',
+                description: 'A set of 500+ vector icons for various design needs. SVG, PNG, and Webfont formats included.',
+                price: 19.99,
+                category: 'Design Resources',
+                imageUrl: 'https://placehold.co/400x300/F0F4F8/EF4444?text=Icon+Pack',
+            },
+            {
+                id: 'prod4',
+                name: 'E-commerce UI Elements',
+                description: 'Specialized UI components for e-commerce websites. Product cards, shopping carts, checkout forms.',
+                price: 39.99,
+                category: 'Design Resources',
+                imageUrl: 'https://placehold.co/400x300/F0F4F8/6366F1?text=E-commerce+UI',
+            },
+        ];
 
-    // Function to create and append product cards
-    function renderProducts() {
-      const productsContainer = document.getElementById('products-container');
-      productsContainer.innerHTML = ''; // Clear existing content
+        // Function to handle "Buy Now" action
+        function handleBuyNow(product) {
+            // In a real application, this would integrate with a payment gateway.
+            // For this example, redirect to a dummy checkout URL.
+            const checkoutUrl = `https://example.com/checkout?product_id=${product.id}&product_name=${encodeURIComponent(product.name)}&price_inr=${product.price.toFixed(0)}`;
+            console.log(`Redirecting to checkout for ${product.name}: ${checkoutUrl}`); // For testing/logging
+            window.location.href = checkoutUrl;
+        }
 
-      dummyProducts.forEach(product => {
-        const productCard = document.createElement('div');
-        productCard.className = 'bg-white rounded-lg shadow-lg overflow-hidden flex flex-col hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 ease-in-out';
-        productCard.innerHTML = `
+        // Function to create and append product cards
+        function renderProducts() {
+            const productsContainer = document.getElementById('products-container');
+            productsContainer.innerHTML = ''; // Clear existing content
+
+            dummyProducts.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'bg-white rounded-lg shadow-lg overflow-hidden flex flex-col hover:shadow-2xl transform hover:-translate-y-2 transition duration-300 ease-in-out';
+                productCard.innerHTML = `
           <img src="${product.imageUrl}" alt="${product.name}" class="w-full h-52 object-cover object-center" onerror="this.onerror=null; this.src='https://placehold.co/400x300/E5E7EB/6B7280?text=Image+Error';" />
           <div class="p-6 flex flex-col flex-grow">
             <h3 class="text-2xl font-bold text-gray-800 mb-2">${product.name}</h3>
             <p class="text-sm text-indigo-600 font-medium mb-3">${product.category}</p>
             <p class="text-gray-700 flex-grow leading-relaxed mb-4">${product.description.substring(0, 100)}...</p>
             <div class="flex justify-between items-center mt-auto pt-4 border-t border-gray-100">
-              <span class="text-blue-700 font-extrabold text-2xl">₹${product.price.toFixed(2)}</span>
+              <span class="text-blue-700 font-extrabold text-2xl">₹${product.price.toFixed(0)}</span>
               <button class="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-full text-base font-bold shadow-md transform hover:scale-105 transition duration-300 ease-in-out flex items-center justify-center buy-now-btn">
                  Buy Now
               </button>
             </div>
           </div>
         `;
-        // Attach event listener to the button after it's created
-        const buyNowBtn = productCard.querySelector('.buy-now-btn');
-        buyNowBtn.addEventListener('click', () => handleBuyNow(product));
+                // Attach event listener to the button after it's created
+                const buyNowBtn = productCard.querySelector('.buy-now-btn');
+                buyNowBtn.addEventListener('click', () => handleBuyNow(product));
 
-        productsContainer.appendChild(productCard);
-      });
-    }
+                productsContainer.appendChild(productCard);
+            });
+        }
 
-    // Set current year in footer
-    document.getElementById('current-year').textContent = new Date().getFullYear();
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
 
-    // Initial render of products when the page loads
-    window.onload = renderProducts;
-  </script>
+        // Initial render of products when the page loads
+        window.onload = renderProducts;
+    </script>
 </body>
+
 </html>
