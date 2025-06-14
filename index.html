@@ -81,9 +81,10 @@
                 description: 'phpShort is an advanced URL Shortener Platform, that allows you to easily shorten links, target your audience based on their location or platform, and provide analytics insights for the shortened links.',
                 price: 9100,
                 category: 'Original License (Extended)',
-                imageUrl: 'https://market-resized.envatousercontent.com/codecanyon.net/files/639159062/product_screen.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=289e85877ac99c9b2185f44636915cab548bf5f30647ebf53be66e70e858aef4',
+                imageUrl: '/url-shortner.png',
                 websiteUrl: 'https://phpshort.lunatio.com/',
-                demoUrl: 'https://phpshort.lunatio.com/'
+                demoUrl: 'https://phpshort.lunatio.com/',
+                buyUrl: 'https://rzp.io/rzp/FAnqOcRz'
             },
             {
                 id: 'prod2',
@@ -91,9 +92,10 @@
                 description: 'SumoWebTools is a web tools script that provides free internet tools useful in daily online activities.',
                 price: 2100,
                 category: 'Original License (Regular)',
-                imageUrl: 'https://market-resized.envatousercontent.com/codecanyon.net/files/534521652/inline-preview.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=4576d8d47616c699fafd3afc548c6c184723aa374eb5e0932d184bc0723a91cb',
+                imageUrl: '/online-webtools.png',
                 websiteUrl: 'https://sumowebtools.themeluxury.com/',
-                demoUrl: 'https://sumowebtools.themeluxury.com/'
+                demoUrl: 'https://sumowebtools.themeluxury.com/',
+                buyUrl: 'https://rzp.io/rzp/C3FovFuI'
             },
             {
                 id: 'prod3',
@@ -101,9 +103,10 @@
                 description: 'Free stock photos website. Browse millions of high-quality royalty free stock images & copyright free pictures.',
                 price: 1100,
                 category: 'Custom License',
-                imageUrl: 'https://freefrontend.dev/wp-content/uploads/pexels-website-homepage-1024x517.png',
+                imageUrl: '/images-website.png',
                 websiteUrl: 'https://stock.famral.com/images',
-                demoUrl: 'https://stock.famral.com/images'
+                demoUrl: 'https://stock.famral.com/images',
+                buyUrl: 'https://rzp.io/rzp/fDFqvRI3'
             },
             {
                 id: 'prod4',
@@ -111,16 +114,17 @@
                 description: 'Stock emoji website. Browse hundreds of high-quality royalty free stock emoji.',
                 price: 1100,
                 category: 'Custom License',
-                imageUrl: 'https://s3-figma-hubfile-images-production.figma.com/hub/file/carousel/img/25f7b932f94636e1b28f8157267ef8ab9c429cf5',
+                imageUrl: '/emoji-website.png',
                 websiteUrl: 'https://stock.famral.com/emoji',
-                demoUrl: 'https://stock.famral.com/emoji'
+                demoUrl: 'https://stock.famral.com/emoji',
+                buyUrl: 'https://rzp.io/rzp/PtDNN5Z'
             }
         ];
 
         // Function to handle "Buy Now" action
         function handleVisit(product) {
             // Redirect to the product's website
-            window.open('https://famral.com', '_blank');
+            window.open(product.buyUrl, '_blank');
         }
         // Update the handleDemo function to use the demo URL
         function handleDemo(product) {
@@ -145,10 +149,10 @@
               <span class="text-blue-700 font-extrabold text-2xl">₹${product.price.toFixed(0)}</span>
               <div class="flex space-x-3 mt-3">
                 <button class="flex-1 bg-green-600 hover:bg-green-700 text-white py-2.5 px-4 rounded-lg text-sm font-semibold shadow-md transform hover:scale-105 transition duration-300 ease-in-out visit-btn">
-                   <i class="fas fa-external-link-alt mr-2"></i>Visit Website
+                  <i class="fas fa-shopping-cart mr-2"></i>Buy Now
                 </button>
                 <button class="flex-1 bg-white hover:bg-gray-100 text-blue-600 border border-blue-500 py-2.5 px-4 rounded-lg text-sm font-semibold shadow-sm transform hover:scale-105 transition duration-300 ease-in-out demo-btn">
-                   Demo
+                  Demo
                 </button>
               </div>
             </div>
