@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -74,7 +73,7 @@
     </footer>
 
     <script>
-        // Dummy Data for Products
+        // Update the dummyProducts array to include demo URLs
         const dummyProducts = [
             {
                 id: 'prod1',
@@ -82,7 +81,9 @@
                 description: 'phpShort is an advanced URL Shortener Platform, that allows you to easily shorten links, target your audience based on their location or platform, and provide analytics insights for the shortened links.',
                 price: 9100,
                 category: 'Original License (Extended)',
-                imageUrl: 'https://placehold.co/400x300/F0F4F8/3B82F6?text=URL+Shortener',
+                imageUrl: 'https://market-resized.envatousercontent.com/codecanyon.net/files/639159062/product_screen.png?auto=format&q=94&cf_fit=crop&gravity=top&h=8000&w=590&s=289e85877ac99c9b2185f44636915cab548bf5f30647ebf53be66e70e858aef4',
+                websiteUrl: 'https://phpshort.lunatio.com/',
+                demoUrl: 'https://phpshort.lunatio.com/'
             },
             {
                 id: 'prod2',
@@ -91,6 +92,8 @@
                 price: 2100,
                 category: 'Original License (Regular)',
                 imageUrl: 'https://placehold.co/400x300/F0F4F8/10B981?text=SumoWebTools',
+                websiteUrl: 'https://sumowebtools.themeluxury.com/',
+                demoUrl: 'https://sumowebtools.themeluxury.com/'
             },
             {
                 id: 'prod3',
@@ -99,6 +102,8 @@
                 price: 1100,
                 category: 'Custom License',
                 imageUrl: 'https://placehold.co/400x300/F0F4F8/EF4444?text=Image+Website',
+                websiteUrl: 'https://stock.famral.com/images',
+                demoUrl: 'https://stock.famral.com/images'
             },
             {
                 id: 'prod4',
@@ -107,20 +112,19 @@
                 price: 1100,
                 category: 'Custom License',
                 imageUrl: 'https://placehold.co/400x300/F0F4F8/EF4444?text=Emoji+Website',
-            },
+                websiteUrl: 'https://stock.famral.com/emoji',
+                demoUrl: 'https://stock.famral.com/emoji'
+            }
         ];
 
         // Function to handle "Buy Now" action
-        function handleBuyNow(product) {
-            const checkoutUrl = `https://example.com/checkout?product_id=${product.id}&product_name=${encodeURIComponent(product.name)}&price_inr=${product.price.toFixed(0)}`;
-            console.log(`Redirecting to checkout for ${product.name}: ${checkoutUrl}`); // For testing/logging
-            window.location.href = checkoutUrl;
+        function handleVisit(product) {
+            // Redirect to the product's website
+            window.open('https://famral.com', '_blank');
         }
-        // Function to handle "Demo" action
+        // Update the handleDemo function to use the demo URL
         function handleDemo(product) {
-            alert(`Showing demo for "${product.name}"! (Simulation)`);
-            // In a real scenario, this might open a modal, redirect to a demo page, etc.
-            console.log(`Demo requested for ${product.name}`);
+            window.open(product.demoUrl, '_blank');
         }
 
         // Function to create and append product cards
@@ -140,8 +144,8 @@
             <div class="mt-auto pt-4 border-t border-gray-100">
               <span class="text-blue-700 font-extrabold text-2xl">₹${product.price.toFixed(0)}</span>
               <div class="flex space-x-3 mt-3">
-                <button class="flex-1 bg-green-600 hover:bg-green-700 text-white py-2.5 px-4 rounded-lg text-sm font-semibold shadow-md transform hover:scale-105 transition duration-300 ease-in-out buy-now-btn">
-                   Buy Now
+                <button class="flex-1 bg-green-600 hover:bg-green-700 text-white py-2.5 px-4 rounded-lg text-sm font-semibold shadow-md transform hover:scale-105 transition duration-300 ease-in-out visit-btn">
+                   <i class="fas fa-external-link-alt mr-2"></i>Visit Website
                 </button>
                 <button class="flex-1 bg-white hover:bg-gray-100 text-blue-600 border border-blue-500 py-2.5 px-4 rounded-lg text-sm font-semibold shadow-sm transform hover:scale-105 transition duration-300 ease-in-out demo-btn">
                    Demo
@@ -151,8 +155,8 @@
           </div>
         `;
                 // Attach event listeners to the buttons after they are created
-                const buyNowBtn = productCard.querySelector('.buy-now-btn');
-                buyNowBtn.addEventListener('click', () => handleBuyNow(product));
+                const visitBtn = productCard.querySelector('.visit-btn');
+                visitBtn.addEventListener('click', () => handleVisit(product));
                 const demoBtn = productCard.querySelector('.demo-btn');
                 demoBtn.addEventListener('click', () => handleDemo(product));
 
